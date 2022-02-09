@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const {userModel} = require('./src/model/LoginModel');
 const { articleModelObj } = require('./src/model/ArticleModel');
 
+const PORT = process.env.PORT || 5000
+
 const app = express();
 app.use(cors());
 
@@ -25,6 +27,7 @@ app.use((req,res,next)=>{
 
 // !for mongodb atlas
  mongoose.connect("mongodb+srv://priyanka:priyanka@cluster0.rutr8.mongodb.net/Blog-app-Assignment?retryWrites=true&w=majority");
+ 
 
 //Basic Routing
 app.get('/api/article/:name' ,(req,res)=>{
